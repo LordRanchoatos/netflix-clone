@@ -4,6 +4,7 @@ import Banner from '../components/Banner'
 import Header from '../components/Header'
 import requests from '../utils/requests'
 import { Movie } from '../typings'
+import Row from '../components/Row'
 
 
 interface Props {
@@ -38,16 +39,18 @@ const Home = ({
     <main className='relative pl-4 pb-24 lg:space-y-24 lg:pl-16'>
       <Header />
       < Banner netflixOriginals={netflixOriginals}/>
-      <section>
-        {/* row */}
-        {/* row */}
-        {/* row */}
-        {/* row */}
-        {/* row */}
-        {/* row */}
-        {/* row */}
-        {/* row */}
-      </section>
+      <section className="md:space-y-24">
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+          {/* My List */}
+          {/* {list.length > 0 && <Row title="My List" movies={list} />} */}
+
+          <Row title="Comedies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
+        </section>
     </main>
     {/* modal */}
       
